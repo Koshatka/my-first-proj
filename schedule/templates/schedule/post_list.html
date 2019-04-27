@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Project schedule</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/schedule.css' %}">
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Django Project schedule</a></h1>
+        </div>
+
+
+        {% for record in records %}
+            <div>
+                <p>published: {{ record.published_date }}</p>
+                <h1><a href="">{{ record.title }}</a></h1>
+                <p>{{ record.description}}</p>
+                <p>start date: {{ record.date_start }}</p>
+                <p>end date: {{ record.date_end }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>
